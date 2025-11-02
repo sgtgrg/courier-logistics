@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">COURIER LOGISTICS</div>
+            <div>
+                <span id="user-name" style="margin-right: 15px; color: white;"></span>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active" onclick="showSection('overview')">Dashboard</a></li>
+                <li><a href="#" onclick="showSection('shipments')">My Shipments</a></li>
+            </ul>
+        </aside>
+
+        <main class="main-content">
+            <div id="overview-section">
+                <h2>Dashboard Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Shipments</div>
+                        <div class="stat-value" id="total-shipments">0</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-label">Delivered</div>
+                        <div class="stat-value" id="delivered-count">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="shipments-section" style="display:none;">
+                <h2 class="mb-3">My Shipments</h2>
+                <div id="shipments-list"></div>
+            </div>
+        </div>
+        </main>
+    </div>
+    <script src="../js/customer-dashboard.js"></script>
+</body>
+</html>

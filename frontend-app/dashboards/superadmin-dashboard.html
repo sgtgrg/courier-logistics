@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Admin Dashboard</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">COURIER LOGISTICS - SUPER ADMIN</div>
+            <div>
+                <span id="user-name" style="margin-right: 15px; color: white;"></span>
+                <button class="btn btn-secondary" onclick="logout()">Logout</button>
+            </div>
+        </div>
+    </header>
+    
+    <div class="dashboard-layout">
+        <aside class="sidebar">
+            <ul class="sidebar-nav">
+                <li><a href="#" class="active" onclick="showSection('overview')">Dashboard</a></li>
+                <li><a href="#" onclick="showSection('users')">User Management</a></li>
+                <li><a href="#" onclick="showSection('create-admin')">Create Admin</a></li>
+                <li><a href="#" onclick="showSection('shipments')">All Shipments</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+
+            <!-- Overview Section -->
+            <div id="overview-section">
+                <h2>System Overview</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-label">Total Shipments</div>
+                        <div class="stat-value" id="total">0</div>
+                    </div>
+                    <div class="stat-card success">
+                        <div class="stat-label">Delivered</div>
+                        <div class="stat-value" id="delivered">0</div>
+                    </div>
+                    <div class="stat-card warning">
+                        <div class="stat-label">In Transit</div>
+                        <div class="stat-value" id="transit">0</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-label">Total Customers</div>
+                        <div class="stat-value" id="customers">0</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- User Management Section -->
+            <div id="users-section" style="display:none;">
+                <h2>User Management</h2>
+                <div id="users-list"></div>
+            </div>
+
+            <!-- Create Admin Section -->
+            <div id="create-admin-section" style="display:none;">
+                <div class="card">
+                    <h2>Create Admin Account</h2>
+                    <form id="create-admin-form">
+                        <div class="form-group">
+                            <label class="form-label">Full Name</label>
+                            <input type="text" class="form-control" id="admin-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Email</label>
+                            <input type="email" class="form-control" id="admin-email" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone</label>
+                            <input type="tel" class="form-control" id="admin-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Password</label>
+                            <input type="password" class="form-control" id="admin-password" minlength="8" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Create Admin</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Shipments Section -->
+            <div id="shipments-section" style="display:none;">
+                <h2>All Shipments</h2>
+                <div id="shipments-list"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- ✅ UPDATE STATUS MODAL ADDED ✅ -->
+    <div id="update-modal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Update Shipment Status</h3>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <form id="update-form">
+                <input type="hidden" id="update-id">
+                
+                <div class="form-group">
+                    <label class="form-label">Status</label>
+                    <select class="form-select" id="update-status" required>
+                        <option value="payment_received">Payment Received</option>
+                        <option value="in_transit">In Transit</option>
+                        <option value="out_for_delivery">Out for Delivery</option>
+                        <option value="delivered">Delivered</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-control" id="update-location" placeholder="Enter location..">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Notes</label>
+                    <textarea class="form-control" id="update-notes" placeholder="Notes (optional)..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Status</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="../js/superadmin-dashboard.js"></script>
+</body>
+</html>

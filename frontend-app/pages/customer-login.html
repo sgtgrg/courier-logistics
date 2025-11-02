@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Login - Courier Logistics</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <h1 class="auth-title">Customer Portal</h1>
+                <p class="auth-subtitle">Access your shipments and create new orders</p>
+            </div>
+
+            <div class="tabs">
+                <button class="tab-btn active" onclick="showTab('login')">Login</button>
+                <button class="tab-btn" onclick="showTab('register')">Register</button>
+            </div>
+
+            <div id="login-tab" class="tab-content active">
+                <form id="login-form">
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="login-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Login</button>
+                </form>
+                <p class="text-center mt-2" style="color: #7F8C8D;">Test Account: customer@test.com / test123</p>
+            </div>
+
+            <div id="register-tab" class="tab-content">
+                <form id="register-form">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" id="reg-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <input type="email" class="form-control" id="reg-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone Number</label>
+                        <input type="tel" class="form-control" id="reg-phone" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Password</label>
+                        <input type="password" class="form-control" id="reg-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary" style="width: 100%;">Register</button>
+                </form>
+            </div>
+
+            <div class="text-center mt-2">
+                <a href="../index.html" style="color: var(--accent);">Back to Home</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/customer.js"></script>
+</body>
+</html>

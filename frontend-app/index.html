@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courier Logistics Management System</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">COURIER LOGISTICS</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#track">Track Package</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">About</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Professional Courier Services</h1>
+            <p>Fast, reliable, and secure package delivery with real-time tracking</p>
+            <div class="btn-group">
+                <a href="pages/customer-login.html" class="btn btn-primary">Customer Portal</a>
+                <a href="pages/admin-login.html" class="btn btn-outline">Admin Login</a>
+                <a href="pages/superadmin-login.html" class="btn btn-secondary">Superadmin Login</a>
+                <a href="#track" class="btn btn-outline">Track Package</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="track" class="tracking-section">
+        <h2 class="text-center mb-3">Track Your Package</h2>
+        <form class="tracking-form" id="tracking-form">
+            <input type="text" class="form-control" id="tracking-id" placeholder="Enter Tracking ID (e.g., TRK1234567890)" required>
+            <button type="submit" class="btn btn-primary">Track</button>
+        </form>
+        <div id="tracking-result"></div>
+    </section>
+
+    <section id="services" class="container">
+        <h2 class="text-center mb-3">Our Services</h2>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <div class="stat-label">Express Delivery</div>
+                <p>Fast delivery within 24-48 hours to major cities</p>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-label">Real-Time Tracking</div>
+                <p>Track your package at every checkpoint of its journey</p>
+            </div>
+            <div class="stat-card warning">
+                <div class="stat-label">Secure Handling</div>
+                <p>Your packages are handled with utmost care and security</p>
+            </div>
+            <div class="stat-card danger">
+                <div class="stat-label">Multiple Payment Options</div>
+                <p>Pay via cash, credit card, or debit card at our store</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
